@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import categoryController from '../controllers/category.controller'
 
+//TODO: Validations and Autorization
+
 const router = Router()
 router.get('/', categoryController.getAllCategories)
 router.get('/:id', categoryController.getCategory)

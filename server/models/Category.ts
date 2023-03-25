@@ -11,7 +11,6 @@ export const categorySchema = new Schema<ICategory>(
 	{
 		timestamps: true,
 		versionKey: false,
-		_id: false,
 	}
 )
 
