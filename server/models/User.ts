@@ -1,8 +1,8 @@
 import mongoose, { Schema } from 'mongoose'
+import { IUser } from 'server/types/User'
 
-const UserSchema = new Schema(
+const UserSchema = new Schema<IUser>(
 	{
-		id: mongoose.Types.ObjectId,
 		name: {
 			type: String,
 			required: [true, 'Name is required'],
