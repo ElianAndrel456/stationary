@@ -18,6 +18,9 @@ interface IProduct {
 	category: ICategory
 	brand: IBrand
 	provider: string
+	sale: boolean
+	createAt: Date
+	updateAt: Date
 }
 
 export type { IProduct, IBrand, ICategory }
