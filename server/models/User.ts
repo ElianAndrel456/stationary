@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose'
-import { IUser } from 'server/types/User'
+import { IUser } from '../types/User'
 
 const UserSchema = new Schema<IUser>(
 	{
@@ -23,9 +23,7 @@ const UserSchema = new Schema<IUser>(
 		password: {
 			type: String,
 			required: true,
-			minLength: 6,
 			trim: true,
-			validate: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
 		},
 
 		role: { type: String, default: 'user' },

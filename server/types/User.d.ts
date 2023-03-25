@@ -6,6 +6,8 @@ interface IUser {
 	role: string
 	valid: boolean
 	code: number
+	createAt: Date
+	updateAt: Date
 }
 
 export type { IUser }
