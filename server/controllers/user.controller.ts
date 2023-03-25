@@ -43,8 +43,8 @@ const generateCodeUser: RequestHandler = async (req, res) => {
 		// var htmlstream = fs.createReadStream("content.html");
 		let info = await transport.sendMail({
 			from: 'Elian test', // sender address
-			to: 'bar@example.com, baz@example.com', // list of receivers
-			subject: 'Hello ✔', // Subject line
+			to: email, // list of receivers
+			subject: 'hello this your code for validate your account', // Subject line
 			html: CodeHTML(code), // html body
 		})
 		console.log(info.messageId)
@@ -61,8 +61,6 @@ const generateCodeUser: RequestHandler = async (req, res) => {
 const createUser: RequestHandler = async (req, res) => {
 	try {
 		const { email } = req.query
-		console.log(email)
-
 		const { code } = req.body
 		const findUser = await User.findOne({ email })
 		if (!findUser) {
@@ -76,7 +74,6 @@ const createUser: RequestHandler = async (req, res) => {
 		const token = jwt.sign({ id: findEmail!._id }, 'secretkey', {
 			expiresIn: '1d',
 		})
-		console.log(token)
 
 		res.status(201).json({
 			token,
